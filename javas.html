@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css" type="text/css" link>
+    <title> EXCEL CHEESE FACTORY UG </title>
+    
+   
+
+
+    </head>
+
+<body>
+    <header>
+        
+       
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="cheese.html">CHEESE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        </header>
+        <main>
+        
+    
+    
+    <aside><img src="images/logo.png" alt="the cheese factory"></aside>
+    <article>
+        
+        <h1>DETAILS</h1>
+
+            <h2>Person's Details</h2>
+
+        
+            <div class="details">
+               
+                    <label for="first-name">First name</label>
+                     <p id="first-name">Shauwah</p>
+            </div>
+            <div class="details">
+               
+                <label for="last-name">Last name</label>
+                 <p id="last-name">kagimu</p>
+           </div>
+            <div class="details">
+               
+            <label for="address">Address</label>
+             <p id="address">kigali</p>
+            </div>
+            <div class="details">
+               
+                <label for="state">State</label>
+                 <p id="state">Sudan</p>
+            </div>
+            <div class="details">
+               
+            <label for="postal-code">Postal-code</label>
+             <p id="postal-code">5000</p>
+            </div>
+            <div class="details">
+               
+            <label for="comments">Comments</label>
+            <p id="comments">the best so far</p>
+            </div>
+
+
+
+            <h2>Product Details</h2>
+
+        
+            <div class="details">
+               
+                    <label for="first-name">Product name</label>
+                     <p id="product_id">Cheese</p>
+            </div>
+            <div class="details">
+               
+                <label for="title">Title</label>
+                 <p id="title">Mozzerella</p>
+            </div>
+            <div class="details">
+               
+                <label for="price">Price</label>
+                 <p id="price">25000</p>
+            </div>
+            <div class="details">
+               
+                <label for="desc">Description</label>
+                 <p id="desc">...........</p>
+            </div>
+
+            
+        
+    </article>
+</main>
+</header>
+
+
+<footer>
+    <p>@copyright 2021. EXCEL Diary FActory</p>
+    <p>About Us</p>
+    <p>products</p>
+    <p>company Blog</p>
+</footer>
+</body>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        
+          const orderDetails =JSON.parse(localStorage.getItem("orderDetails"));
+          //console.log(orderDetails.first_name, "THIS IS THE FIRST NAME")
+          document.getElementById("first-name").innerHTML = orderDetails.first_name
+          document.getElementById("address").innerHTML = orderDetails.Address
+          document.getElementById("state").innerHTML = orderDetails.state
+          document.getElementById("postal-code").innerHTML = orderDetails.postalcode
+          document.getElementById("comments").innerHTML = orderDetails.comments
+
+          const order =JSON.parse(localStorage.getItem("order"));
+          document.getElementById("product_id").innerHTML = order.id
+          //console.log(order.productId, "order is loaded")
+          document.getElementById("title").innerHTML = order.title
+          document.getElementById("price").innerHTML = order.price
+          console.log(order.price, "order is loaded")
+          document.getElementById("desc").innerHTML = order.desc
+
+
+
+
+
+        });
+
+      
+
+
+
+</script>
+
+    
+</body>
+</html>

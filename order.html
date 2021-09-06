@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css" type="text/css" link>
+    <style>
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            padding: 10;
+            border: solid 1px gray;
+            border-radius: 2px;
+            width: 100%;
+        }
+        label {
+            font-weight: 600;
+        }
+        input[type="reset"] {
+            background: transparent;
+            border: 0;
+            text-decoration: underline;
+            cursor: zoom-in; 
+        }
+
+        input[type="submit"] {
+        
+            border: solid 1px rgb(126, 27, 27);
+            border-radius: 3;
+            padding: 10px;
+        }
+
+
+
+    </style>
+    <title> Order Page </title>
+
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="cheese.html">CHEESE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        </header>
+        <main>
+        
+    
+    
+    <aside><img src="images/logo.png" alt="the cheese factory"></aside>
+    <article>
+        <h1>Order</h1>
+        <form>
+            <div class="input-group">
+                <div>
+                    <label for="first-name">First name</label></div>
+                    <div><input type="text" name="first-name" id="first-name"/>
+                </div>
+
+            </div>
+            <div class="input-group">
+                <div>
+                    <label for="last-name">Last-name</label></div>
+                    <div><input type="text" name="last-name" id="last-name"/>
+                </div>
+                
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="Address">Address</label></div>
+                    <div><input type="text" name="Address" id="Address"/>
+                </div>
+                
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="state">State</label></div>
+                    <div>
+                        <select name="state" id="state">
+                            <option value=" " selected>[ select one ]</option>
+                            <option value="Alabama">Alabama</option>
+                            <option value="bahammas">Bahammas</option>
+                            <option value="cuba">Cuba</option>
+                            <option value="dubia">Dubai</option>
+                            <option value="egpty">Egypt</option>
+                            <option value="france">France</option>
+                            <option value="iran">Iran</option>
+                            <option value="nairobi">Nairobi</option>
+                            <option value="kampala">Kampala</option>
+                            <option value="dodoma">Dodoma</option>
+                            <option value="cape-town">Cape-town</option>
+                            <option value="masaka">Masaka</option>
+                            
+                        </select>
+
+
+
+              
+                </div>
+                    <div class="input-group">
+                    </div>
+                        <div class="input-group"></div>
+                    
+                    
+                        <label for="postal-code">Postal-code</label></div>
+
+                        
+                        <div><input type="text" name="postal-code" id="postal-code"/>
+                            <div><label for="comments">Comments</label></div>
+                    </div><div>
+                        <textarea
+                        name="comments"
+                        id="comments"
+                        cols="30"
+                        rows="5"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <input type="reset" value="Reset"/>
+                <input id="reset-btn" type="button" value="Press-your-Order"/>
+
+        
+                
+                     
+        </form>
+    </article>
+
+</main>
+</header>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="/"></a>HOME</li>
+            <li><a href="cheese.com"></a>CHEESE</li>
+            <li><a href="contact.com"></a>CONTACT</li>
+        </ul>
+    </nav>
+</footer>
+</body>
+<script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                      
+                       const reset_button = document.getElementById("reset-btn");
+                      
+                       reset_button.addEventListener('click', function(e){
+                        var firstName = document.getElementById("first-name").value;
+                        
+                           var lastName = document.getElementById("last-name").value;
+                           var Address = document.getElementById("Address").value;
+                           var state = document.getElementById("state").value;
+                           var postalcode = document.getElementById("postal-code").value;
+                           var comments = document.getElementById("comments").value;
+                          
+                          //creating an object
+                          const orderDetails={
+
+                              first_name:firstName,
+                              last_name:lastName,
+                              Address:Address,
+                              state:state,
+                              postalcode:postalcode,
+                              comments:comments,
+                          }
+
+                              localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+                        const url = window.location.href.replace("order.html", "javas.html");
+                        
+                        window.location.href = url;
+                       });
+                           
+                       })
+</script>
+
+    
+</body>
+</html>

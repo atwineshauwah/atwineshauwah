@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css" type="text/css" link>
+    <title> CHEESE | EXCEL CHEESE FACTORY UG </title>
+    <style>
+    .columns{
+    display: flex;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="cheese.html">CHEESE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+
+
+        <aside><img src="images/logo.png" alt="the cheese factory"></aside>
+        <article>
+            <h1>CHEESE</h1>
+            <section class="columns-desktop">
+                <div class="cheese">
+                    <img src="images/apple-pie.png" alt="Apple pie">
+                    <div class="column">
+                        <div class="title">
+                            Mozzerella
+                        </div>
+                        <div class="price"> $1000 </div>
+                        <p class="desc">Our famous type of cheese </p>
+                        <button data-order="apple pie">Order</button>
+                    </div>
+                    </div>
+                    <div class="cheese">
+                        <img src="images/cherry-pie.png" alt="cherry pie">
+                        <div class="column">
+                            <div class="title">
+                                fetta cheese
+                            </div>
+                            <div class="price"> $2000 </div>
+                            <p class="desc">Our best type of cheese </p>
+                            <button data-order="cherry-pie">Order</button>
+                        </div>
+                        </div>
+                        
+
+
+            </section>
+
+
+        </article>
+    </main>
+    </header>
+    <footer>
+       <p>@copyright 2021. EXCEL Diary FActory</p>
+      
+   </footer>
+         <script>
+             
+             window.addEventListener('DOMContentLoaded', (event) => {
+                const orderbutton = document.querySelectorAll("button[data-order]");
+                orderbutton.forEach(function(button) {
+                    button.addEventListener("click", function(e){
+                    localStorage.clear();
+                        const selectedButton = e.currentTarget;
+                        const container = button.parentNode;
+                        const order = {
+                            id: button.getAttribute("data-order"),
+                            title: container.querySelector(".title").innerText,
+                            price: container.querySelector(".price").innerText,
+                            desc: container.querySelector(".desc").innerText
+                        };
+
+                        localStorage.setItem("order", JSON.stringify(order) );
+                        const url = window.location.href.replace("cheese.html", "order.html");
+                        
+                        window.location.href = url;
+
+                    })
+
+                })
+               
+                 });
+
+        </script>
+
+
+</body>
+
+</html>
